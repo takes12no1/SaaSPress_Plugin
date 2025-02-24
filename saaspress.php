@@ -35,6 +35,7 @@ require_once SAASPRESS_DIR . 'inc/functions.php';
 class SaaSPress {
     public function __construct() {
         add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
+        add_action( 'admin_menu', array( $this, 'add_submenu' ) );
     }
 
     // Add menu to the admin panel
@@ -50,6 +51,18 @@ class SaaSPress {
         );
     }
 
+    // Add a submenu for Reports
+    public function add_submenu() {
+        add_submenu_page(
+            'saaspress-dashboard',    // Parent menu
+            'SaaSPress Reports',      // Submenu title
+            'Reports',                // Menu label
+            'manage_options',         // Permission
+            'saaspress-reports',      // Menu slug
+            array( $this, 'render_reports' ) // Function to display the reports
+        );
+    }
+
     // Render the dashboard page
     public function render_dashboard() {
         echo '<div class="wrap">';
@@ -57,7 +70,23 @@ class SaaSPress {
         echo '<p>This is the central hub to manage SaaSPress resources and tools.</p>';
         echo '</div>';
     }
+
+    // Render the reports page
+    public function render_reports() {
+        // Example report data (this could be replaced with dynamic data)
+        $total_users = 120; // Sample data
+        $total_interactions = 450; // Sample data
+
+        echo '<div class="wrap">';
+        echo '<h1>SaaSPress Reports</h1>';
+        echo '<table class="form-table">';
+        echo '<tr><th>Total Users</th><td>' . esc_html( $total_users ) . '</td></tr>';
+        echo '<tr><th>Total Interactions</th><td>' . esc_html( $total_interactions ) . '</td></tr>';
+        echo '</table>';
+        echo '</div>';
+    }
 }
 
 // Initialize the class
 new SaaSPress();
+?>
