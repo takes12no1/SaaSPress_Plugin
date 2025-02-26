@@ -1,0 +1,109 @@
+/* General styles for SaaSPress */
+
+/* Reset margins and paddings for a clean base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Admin panel body */
+.wrap {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Titles */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Subtitles and paragraphs */
+p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Custom buttons */
+.button-primary {
+    background-color: #0073aa;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #005f8d;
+}
+
+/* SaaSPress menu */
+#toplevel_page_saaspress-dashboard {
+    background-color: #0073aa;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+#toplevel_page_saaspress-dashboard:hover {
+    background-color: #005f8d;
+}
+
+/* Dashboard card */
+.saaspress-card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.saaspress-card h2 {
+    font-size: 22px;
+    color: #333;
+}
+
+.saaspress-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Table styles (if needed) */
+.saaspress-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.saaspress-table th,
+.saaspress-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.saaspress-table th {
+    background-color: #0073aa;
+    color: white;
+}
+
+.saaspress-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.saaspress-table tr:hover {
+    background-color: #f1f1f1;
+}
