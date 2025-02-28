@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/plugin-update-checker/plugin-update-checker.php';
+
 class SaaSPress_Update_Checker {
     private $plugin_slug;
     private $plugin_version;
