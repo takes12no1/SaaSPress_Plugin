@@ -19,13 +19,15 @@ define( 'SAASPRESS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SAASPRESS_URL', plugin_dir_url( __FILE__ ) );
 
 // Include Update Checker
-require_once SAASPRESS_DIR . 'inc/update-checker.php';
+require_once __DIR__ . '/inc/plugin-update-checker/plugin-update-checker.php';
 
 // Initialize Update Checker
-$updateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://saaspress.com/updates/saaspress.json',  // URL to the update JSON
-    __FILE__,  // Main plugin file
-    'saaspress'  // Plugin slug
+use YahnisElsts\PluginUpdateChecker\v5p5\PucFactory;
+
+$updateChecker = PucFactory::buildUpdateChecker(
+    'https://saaspress.com/updates/saaspress.json', // plugin_zip_url exemple
+    __FILE__,
+    'saaspress' // plugin slug
 );
 
 // Include helper files
