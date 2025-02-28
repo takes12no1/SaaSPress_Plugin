@@ -77,6 +77,6 @@ class SaaSPress_Update_Checker {
 new SaaSPress_Update_Checker(
     'saaspress',
     '1.0.0', // Current plugin version
-    'https://yourwebsite.com/wp-plugin-updates/saaspress.json'
+    'https://saaspress.com/wp-plugin-updates/saaspress.json'
 );
 ?>
