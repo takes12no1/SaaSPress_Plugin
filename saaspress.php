@@ -3,7 +3,7 @@
 Plugin Name: SaaSPress
 Plugin URI: https://saaspress.com
 Description: A plugin to manage SaaSPress resources and tools.
-Version: 1.0.2
+Version: 1.0.1
 Author: SaaSPress
 Author URI: https://saaspress.com
 License: GPL2
@@ -25,10 +25,19 @@ require_once __DIR__ . '/inc/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5p5\PucFactory;
 
 $updateChecker = PucFactory::buildUpdateChecker(
-    'https://saaspress.com/updates/saaspress.json', // plugin_zip_url exemple
+    'https://github.com/takes12no1/SaaSPress_Plugin/', // Replace with your actual GitHub repo URL
     __FILE__,
-    'saaspress' // plugin slug
+    'saaspress' // Plugin slug
 );
+
+// (Optional) If your repository is private, add an authentication token:
+// $updateChecker->setAuthentication('your-access-token');
+
+// (Optional) If you want to use a specific branch:
+// $updateChecker->setBranch('main');
+
+// (Optional) Show a "View on GitHub" link on the WordPress plugins page
+$updateChecker->setUpdateApi('github');
 
 // Include helper files
 require_once SAASPRESS_DIR . 'inc/functions.php';
