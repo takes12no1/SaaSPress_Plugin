@@ -25,7 +25,7 @@ require_once __DIR__ . '/inc/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5p5\PucFactory;
 
 $updateChecker = PucFactory::buildUpdateChecker(
-    'https://github.com/takes12no1/SaaSPress_Plugin/', // Replace with your actual GitHub repo URL
+    'https://github.com/takes12no1/SaaSPress_Plugin/archive/refs/tags/v1.0.1.zip', // GitHub URL for the release zip file
     __FILE__,
     'saaspress' // Plugin slug
 );
