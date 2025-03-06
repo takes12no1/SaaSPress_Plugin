@@ -36,9 +36,6 @@ $updateChecker = PucFactory::buildUpdateChecker(
 // (Optional) If you want to use a specific branch:
 // $updateChecker->setBranch('main');
 
-// (Optional) Show a "View on GitHub" link on the WordPress plugins page
-$updateChecker->setUpdateApi('github');
-
 // Include helper files
 require_once SAASPRESS_DIR . 'inc/functions.php';
 
