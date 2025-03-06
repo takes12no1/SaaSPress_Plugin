@@ -76,7 +76,7 @@ class SaaSPress_Update_Checker {
 // Initialize the update checker
 new SaaSPress_Update_Checker(
     'saaspress',                          // Plugin slug
-    '1.0.1',                              // Versão atual do plugin
-    'https://github.com/takes12no1/SaaSPress_Plugin/archive/refs/tags/v1.0.1.zip'  // GitHub URL para download
+    '1.0.1',                              // Current plugin version
+    'https://github.com/takes12no1/SaaSPress_Plugin/archive/refs/tags/v1.0.1.zip'  // GitHub URL for download
 );
 ?>
