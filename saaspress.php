@@ -25,16 +25,20 @@ require_once __DIR__ . '/inc/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5p5\PucFactory;
 
 $updateChecker = PucFactory::buildUpdateChecker(
-    'https://github.com/takes12no1/SaaSPress_Plugin/archive/refs/tags/v1.0.1.zip', // GitHub URL for the release zip file
+    'https://github.com/takes12no1/SaaSPress_Plugin', // Before: GitHub URL for the release zip file; Now: Just the repository URL, no .zip
     __FILE__,
     'saaspress' // Plugin slug
 );
+
+
+// Set the correct GitHub API version
+$updateChecker->getVcsApi()->enableReleaseAssets();
 
 // (Optional) If your repository is private, add an authentication token:
 // $updateChecker->setAuthentication('your-access-token');
 
 // (Optional) If you want to use a specific branch:
-// $updateChecker->setBranch('main');
+$updateChecker->setBranch('main');
 
 // Include helper files
 require_once SAASPRESS_DIR . 'inc/functions.php';
