@@ -3,7 +3,7 @@
 Plugin Name: SaaSPress
 Plugin URI: https://saaspress.com
 Description: A plugin to manage SaaSPress resources and tools.
-Version: 1.0.1
+Version: 1.0.2
 Author: SaaSPress
 Author URI: https://saaspress.com
 License: GPL2
