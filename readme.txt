@@ -3,7 +3,7 @@ Contributors: SaaSPress
 Tags: plugin, saas, dashboard, management, WordPress
 Requires at least: 5.0
 Tested up to: 6.7.2
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,17 @@ Yes, the plugin's dashboard page is customizable. You can edit the `render_dashb
 
 = 1.0 =
 * Initial release with basic functionality for adding a menu and displaying a dashboard.
+
+= 1.0.1 =
+* Adding a library for automatic updates.
+* Fixing bugs with update-checker.php
+* Removing unnecessary lines of code.
+
+= 1.0.2 =
+* Small change in version number for testing.
+
+= 1.0.3 =
+* Small change in version number for testing.
 
 == Upgrade Notice ==
 
