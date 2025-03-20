@@ -1,6 +1,6 @@
 /* General styles for SaaSPress */
 
-/* Reset margins and paddings for a clean base */
+/* Reset default margins and paddings */
 *,
 *::before,
 *::after {
@@ -9,101 +9,233 @@
     box-sizing: border-box;
 }
 
-/* Admin panel body */
+/* General admin container */
 .wrap {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 20px 20px 0 0;
 }
 
-/* Titles */
-h1 {
+/* SaaSPress header */
+.saaspress-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 13px 15px;
+    border-bottom: 1px solid #ccd0d4;
+    background: #fff;
+}
+.saaspress-header .logo {
+    margin-right: 15px;
+    padding-right: 15px;
+    position: relative;
+}
+.saaspress-header .logo:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 66px;
+    margin: -12px 0;
+    background: #ccd0d4;
+}
+.saaspress-header .logo i {
     font-size: 28px;
-    color: #333;
-    margin-bottom: 10px;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    background: #0073aa;
 }
-
-/* Subtitles and paragraphs */
-p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Custom buttons */
-.button-primary {
-    background-color: #0073aa;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.button-primary:hover {
-    background-color: #005f8d;
-}
-
-/* SaaSPress menu */
-#toplevel_page_saaspress-dashboard {
-    background-color: #0073aa;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 4px;
-}
-
-#toplevel_page_saaspress-dashboard:hover {
-    background-color: #005f8d;
-}
-
-/* Dashboard card */
-.saaspress-card {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.saaspress-card h2 {
+.saaspress-header h1 {
     font-size: 22px;
-    color: #333;
+    font-weight: 500;
+    color: #23282d;
+    margin: 0;
 }
 
+/* Dashboard container */
+.saaspress-dashboard {
+    position: relative;
+    padding: 30px;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+/* Modules grid */
+.saaspress-modules {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 15px;
+}
+.saaspress-card {
+    flex: 0 0 288px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccd0d4;
+    border-radius: 6px;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+.saaspress-card:hover {
+    /* Changed to use data-index for unique colors */
+    border-color: transparent;
+    box-shadow: 0 0 0 3px var(--hover-color, #0073aa);
+}
+.saaspress-card[data-index="0"]:hover {
+    --hover-color: #0073aa; /* Blue */
+}
+.saaspress-card[data-index="1"]:hover {
+    --hover-color: #ff5733; /* Orange */
+}
+.saaspress-card[data-index="2"]:hover {
+    --hover-color: #33ff57; /* Green */
+}
+.saaspress-card[data-index="3"]:hover {
+    --hover-color: #5733ff; /* Purple */
+}
+.saaspress-card[data-index="4"]:hover {
+    --hover-color: #ff33a1; /* Pink */
+}
+.saaspress-card[data-index="5"]:hover {
+    --hover-color: #33a1ff; /* Light Blue */
+}
+.saaspress-card i {
+    font-size: 28px;
+    line-height: 50px;
+    display: inline-block;
+    color: #0073aa;
+    border-radius: 6px;
+    background: rgba(0, 115, 170, 0.1);
+    height: 50px;
+    width: 50px;
+}
+.saaspress-card h2 {
+    font-size: 18px;
+    margin: 15px 0 10px;
+    color: #23282d;
+}
 .saaspress-card p {
     font-size: 14px;
-    color: #666;
+    color: #555d66;
+    margin: 0;
+}
+.saaspress-card.active {
+    background: #f9f9f9;
+    border-color: #0073aa;
 }
 
-/* Table styles (if needed) */
+/* Primary button */
+.button-primary {
+    font-size: 14px;
+    line-height: 38px;
+    padding: 0 20px;
+    color: #fff;
+    border: 1px solid #0073aa;
+    border-radius: 3px;
+    background: #0073aa;
+    text-decoration: none;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+.button-primary:hover,
+.button-primary:focus {
+    border-color: #005f8d;
+    background: #005f8d;
+    color: #fff;
+}
+
+/* New secondary button for Help section */
+.saaspress-button {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 36px;
+    padding: 0 15px;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+.saaspress-button-secondary {
+    color: #fff;
+    background: #d54e21;
+    border: 1px solid #d54e21;
+}
+.saaspress-button-secondary:hover {
+    background: #c33;
+    border-color: #c33;
+}
+.saaspress-button-info {
+    color: #fff;
+    background: #0073aa;
+    border: 1px solid #0073aa;
+}
+.saaspress-button-info:hover {
+    background: #005f8d;
+    border-color: #005f8d;
+}
+
+/* Reports table */
 .saaspress-table {
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 6px;
 }
-
 .saaspress-table th,
 .saaspress-table td {
-    padding: 12px;
+    padding: 12px 15px;
     text-align: left;
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ccd0d4;
 }
-
 .saaspress-table th {
-    background-color: #0073aa;
-    color: white;
+    background: #f1f1f1;
+    color: #23282d;
+    font-weight: 600;
 }
-
-.saaspress-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+.saaspress-table tr:last-child td {
+    border-bottom: none;
 }
-
 .saaspress-table tr:hover {
-    background-color: #f1f1f1;
+    background: #f9f9f9;
+}
+
+/* Admin menu styling */
+#toplevel_page_saaspress-dashboard .wp-menu-name {
+    font-weight: 600;
+}
+#toplevel_page_saaspress-dashboard .wp-menu-image img {
+    display: none;
+}
+#toplevel_page_saaspress-dashboard .wp-menu-image:before {
+    color: #fff;
+}
+
+/* Help section styling */
+.saaspress-help-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    border-radius: 6px;
+    background: #fff;
+}
+.saaspress-help-section h2 {
+    font-size: 18px;
+    color: #23282d;
+    margin-bottom: 10px;
+}
+.saaspress-help-section p {
+    font-size: 14px;
+    color: #555d66;
+    margin-bottom: 15px;
 }
